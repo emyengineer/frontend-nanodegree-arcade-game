@@ -79,7 +79,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -94,6 +94,24 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
+    }
+
+    function checkCollisions () {
+        allEnemies.forEach(function(enemy) {
+            var  horizonDiff = Math.abs(Math.floor(enemy.x) - player.startPosX);
+            if(horizonDiff <= 25 )
+            {
+                var verticDiff = Math.abs(Math.floor(enemy.y) - player.startPosY);
+                console.log(verticDiff);
+                if(verticDiff <= 20)
+                {
+                     player.reset();
+                     enemy.x += 50;
+                     var audio = new Audio('sounds/collision.mp3'); //whistle.mp3');
+                     audio.play();
+                }   
+            }
+        });
     }
 
     /* This function initially draws the "game level", it will then call
