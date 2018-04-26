@@ -19,6 +19,7 @@ _The game board consists Bugs or enemies trying to prevent a frogger or a player
 
 # Game Rules:
 * The player tries to move to the water up.
+* Use arrow keys 'up', 'right', 'down' and 'left' to move the girl on the grass and try to help him gets to the river without colliding with the bugs on the rock road.
 * The bugs or enemies try to prevent it from passing to the river.
 * If collision happens between the player and an enemy the player reset to initial position.
 * If the player succeeds to pass to the river a success sound is played and player gets back to its initial position.
